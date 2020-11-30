@@ -1,0 +1,80 @@
+# PracticasComputacionI
+
+#include "Grupo.h"
+
+Grupo::Grupo(string nG,float p,int h){
+	
+	nomG=nG;    pka=p;   ph=h;
+	
+}
+
+
+
+
+class Grupo{
+	
+	private:
+		string nomG;
+		int pka;
+		float ph;
+		
+	public:
+		    Grupo(string,int,float);
+	
+	
+};
+
+
+#include "Molecula.h"
+
+Molecula::Molecula(string n){
+	
+	nombre=n;
+	i=0;
+}
+
+void Molecula::agregarGrupo(Grupo g){
+	
+	
+	pk[i]=g.pkGrupo;
+	
+	
+	i++;
+}
+
+
+float Molecula::CalcularPuntoIsoelectrico(){
+
+     float punto;
+     
+     
+     
+     for(int n=1;n<i;n++){
+     	
+     	suma=suma=pk[n];  //Sumando los ultimos pka 
+	                }
+	                
+	punto=suma/2;   //Calculando el punto Isoelectrico
+     
+     
+    return punto;
+	
+	
+}
+
+
+
+class Grupo;
+class Molecula{
+	
+	private:
+		  string nombre;
+		  int i;
+		  float pk[2]; //Guardar los pka de los grupos
+		  
+	public:
+		   Molecula(string);
+		   void agregarGrupo(Grupo g);
+		   float CalcularPuntoIsoelectrico();
+		
+};
